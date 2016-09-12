@@ -1,9 +1,15 @@
 Linux IIO Driver for LidarLite by PulsedLight3D Inc.
 
+See also https://github.com/PulsedLight3D/LIDARLite_Basics/blob/master/README.md
+
 This driver is based on the IIO driver made by PulsedLight3D. Their driver was a set of patch files to Linux source so 
 I simply extracted it and added Makefile and DeviceTree files so it can be built out of the Kernel source tree. On the
 BeagleBoard this means a simple checkout and build step as opposed to downloading, building and installing a whole
 kernel.
+
+I've since learned the driver is already integrated into the BeagleBoard image. However, It doesnt auto detect the sensor
+so I am not sure how to activate the built-in module. From the original driver code it seems to be missing some DeviceTree
+configuration.
 
 To compile you need to have at least the kernel headers pkg installed. You could also download the Kernel source into
 the directory ~/src/linux and the Makefile will find it there. You will also need the dtc compiler:
