@@ -1,0 +1,18 @@
+menuconfig LidarLite
+	bool "Pulsed Light Lidar-Lite Module"
+	help
+      Pulsed Light mini lidar distance measurement module
+
+if LidarLite
+
+config LIDARLITE
+	tristate "Lidar-Lite (Pulsed Light)"
+	depends on I2C
+	select REGMAP_I2C IIO_BUFFER IIO_TRIGGERED_BUFFER
+	help
+      Pulsed Light mini lidar distance measurement module
+
+	  To compile this driver as a module, choose M here: the module
+	  will be called gps-quadrino.
+
+endif
